@@ -1,0 +1,753 @@
+<div id="content" class="clearfix">
+  <div id="column2" class="interior">
+    <div id="intro" class="interior">
+      <a href="/">
+        Node.js 中文网
+      </a>
+      <div>
+        <input placeholder="API 快速搜索" id="search_input">
+      </div>
+    </div>
+    <ul>
+      <li><a class="nav-assert" href="assert.html">assert - 断言</a></li>
+      <li><a class="nav-buffer" href="buffer.html">Buffer - 缓冲器</a></li>
+      <li><a class="nav-child_process" href="child_process.html">child_process - 子进程</a></li>
+      <li><a class="nav-cluster" href="cluster.html">cluster - 集群</a></li>
+      <li><a class="nav-console active" href="console.html">console - 控制台</a></li>
+      <li><a class="nav-crypto" href="crypto.html">crypto - 加密</a></li>
+      <li><a class="nav-dgram" href="dgram.html">dgram - 数据报</a></li>
+      <li><a class="nav-dns" href="dns.html">dns - 域名服务器</a></li>
+      <li><a class="nav-errors" href="errors.html">Error - 异常</a></li>
+      <li><a class="nav-events" href="events.html">events - 事件</a></li>
+      <li><a class="nav-fs" href="fs.html">fs - 文件系统</a></li>
+      <li><a class="nav-globals" href="globals.html">global - 全局变量</a></li>
+      <li><a class="nav-http" href="http.html">http - HTTP</a></li>
+      <li><a class="nav-https" href="https.html">https - HTTPS</a></li>
+      <li><a class="nav-modules" href="modules.html">module - 模块</a></li>
+      <li><a class="nav-net" href="net.html">net - 网络</a></li>
+      <li><a class="nav-os" href="os.html">os - 操作系统</a></li>
+      <li><a class="nav-path" href="path.html">path - 路径</a></li>
+      <li><a class="nav-process" href="process.html">process - 进程</a></li>
+      <li><a class="nav-querystring" href="querystring.html">querystring - 查询字符串</a></li>
+      <li><a class="nav-readline" href="readline.html">readline - 逐行读取</a></li>
+      <li><a class="nav-repl" href="repl.html">repl - 交互式解释器</a></li>
+      <li><a class="nav-stream" href="stream.html">stream - 流</a></li>
+      <li><a class="nav-string_decoder" href="string_decoder.html">string_decoder - 字符串解码器</a></li>
+      <li><a class="nav-timers" href="timers.html">timer - 定时器</a></li>
+      <li><a class="nav-tls" href="tls.html">tls - 安全传输层</a></li>
+      <li><a class="nav-tty" href="tty.html">tty - 终端</a></li>
+      <li><a class="nav-url" href="url.html">url - 网址</a></li>
+      <li><a class="nav-util" href="util.html">util - 实用工具</a></li>
+      <li><a class="nav-v8" href="v8.html">v8 - V8引擎</a></li>
+      <li><a class="nav-vm" href="vm.html">vm - 虚拟机</a></li>
+      <li><a class="nav-zlib" href="zlib.html">zlib - 压缩</a></li>
+    </ul>
+    <div class="line"></div>
+
+    <ul>
+      <li><a class="nav--api-documentation-documentation_stability_index"
+             href="/api/documentation.html#documentation_stability_index">试验的API</a></li>
+      <li><a class="nav-async_hooks" href="async_hooks.html">async_hooks</a></li>
+      <li><a class="nav-http2" href="http2.html">http2</a></li>
+      <li><a class="nav-inspector" href="inspector.html">inspector</a></li>
+      <li><a class="nav-n-api" href="n-api.html">napi</a></li>
+      <li><a class="nav-perf_hooks" href="perf_hooks.html">perf_hooks</a></li>
+    </ul>
+    <div class="line"></div>
+
+    <ul>
+      <li><a class="nav-deprecations" href="deprecations.html">废弃的API</a></li>
+      <li><a class="nav-domain" href="domain.html">domain</a></li>
+      <li><a class="nav-punycode" href="punycode.html">punycode</a></li>
+    </ul>
+    <div class="line"></div>
+
+    <ul>
+      <li><a class="nav-documentation" href="documentation.html">关于本文档</a></li>
+      <li><a class="nav-synopsis" href="synopsis.html">用法与例子</a></li>
+      <li><a class="nav-addons" href="addons.html">C++插件</a></li>
+      <li><a class="nav-cli" href="cli.html">命令行选项</a></li>
+      <li><a class="nav-debugger" href="debugger.html">debugger调试器</a></li>
+      <li><a class="nav-intl" href="intl.html">国际化</a></li>
+      <li><a class="nav-tracing" href="tracing.html">事件跟踪</a></li>
+      <li><a class="nav-esm" href="esm.html">ECMAScript 模块</a></li>
+    </ul>
+
+  </div>
+
+  <div id="column1" data-id="console" class="interior">
+    <header>
+      <h1>Node.js v8.9.3 文档</h1>
+      <div id="gtoc">
+        <p>
+          <a href="/api/" name="toc">返回文档首页</a>
+          <!--<a href="/api/all.html">单页面显示</a> |-->
+          <!--<a href="/api/console.json">JSON格式</a> |-->
+          <!--<a href="/api/en/console.html">查看英文版</a>-->
+        </p>
+      </div>
+      <hr>
+    </header>
+
+    <div id="toc">
+      <h2>目录</h2>
+      <ul>
+        <li><span class="stability_2"><a href="#console_console">console (控制台)</a></span>
+          <ul>
+            <li><span class="stability_undefined"><a href="#console_class_console">Console 类</a></span>
+              <ul>
+                <li><span class="stability_undefined"><a href="#console_new_console_stdout_stderr">new Console(stdout[, stderr])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_assert_value_message_args">console.assert(value[, message][, ...args])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_clear">console.clear()</a></span></li>
+                <li><span class="stability_undefined"><a href="#console_console_count_label">console.count([label])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_countreset_label_default">console.countReset([label='default'])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_dir_obj_options">console.dir(obj[, options])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_error_data_args">console.error([data][, ...args])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a
+                  href="#console_console_group_label">console.group([...label])</a></span></li>
+                <li><span class="stability_undefined"><a
+                  href="#console_console_groupcollapsed">console.groupCollapsed()</a></span></li>
+                <li><span class="stability_undefined"><a href="#console_console_groupend">console.groupEnd()</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_info_data_args">console.info([data][, ...args])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_log_data_args">console.log([data][, ...args])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a
+                  href="#console_console_time_label">console.time(label)</a></span></li>
+                <li><span class="stability_undefined"><a
+                  href="#console_console_timeend_label">console.timeEnd(label)</a></span></li>
+                <li><span class="stability_undefined"><a href="#console_console_trace_message_args">console.trace([message][, ...args])</a></span>
+                </li>
+                <li><span class="stability_undefined"><a href="#console_console_warn_data_args">console.warn([data][, ...args])</a></span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <div id="apicontent">
+      <h1>console (控制台)<span><a class="mark" href="#console_console" id="console_console">#</a></span></h1>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console">查看英文版</a> / <a
+        rel="nofollow" target="_blank" href="https://github.com/nodejscn/node-api-en/edit/master/console/console.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console.md">编辑中文md文件</a></p>
+      <!--introduced_in=v0.10.13-->
+      <div class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index">稳定性: 2</a> -
+        稳定的
+      </div>
+      <p><code>console</code> 模块提供了一个简单的调试控制台，类似于 Web 浏览器提供的 JavaScript 控制台。</p>
+      <p>该模块导出了两个特定的组件：</p>
+      <ul>
+        <li>一个 <code>Console</code> 类，包含 <code>console.log()</code> 、 <code>console.error()</code> 和 <code>console.warn()</code>
+          等方法，可以被用于写入到任何 Node.js 流。
+        </li>
+        <li>一个全局的 <code>console</code> 实例，可被用于写入到 <a
+          href="process.html#process_process_stdout"><code>process.stdout</code></a> 和 <a
+          href="process.html#process_process_stderr"><code>process.stderr</code></a>。
+          全局的 <code>console</code> 使用时无需调用 <code>require('console')</code>。
+        </li>
+      </ul>
+      <p>注意：全局的 console 对象的方法既不总是同步的（如浏览器中类似的 API），也不总是异步的（如其他 Node.js 流）。
+        详见 <a href="process.html#process_a_note_on_process_i_o">进程 I/O</a>。</p>
+      <p>例子，使用全局的 <code>console</code>：</p>
+      <pre class="sh_sourceCode"><code class="lang-js">console<span class="sh_symbol">.</span><span class="sh_function">log</span><span
+        class="sh_symbol">(</span><span class="sh_string">'你好世界'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '你好世界'到 stdout。</span>
+console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'你好%s'</span><span class="sh_symbol">,</span> <span class="sh_string">'世界'</span><span
+          class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '你好世界'到 stdout。</span>
+console<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span><span
+          class="sh_keyword">new</span> <span class="sh_predef_func">Error</span><span class="sh_symbol">(</span><span
+          class="sh_string">'错误信息'</span><span class="sh_symbol">));</span>
+<span class="sh_comment">// 打印: [Error: 错误信息]到 stderr。</span>
+
+<span class="sh_keyword">const</span> name <span class="sh_symbol">=</span> <span class="sh_string">'描述'</span><span
+          class="sh_symbol">;</span>
+console<span class="sh_symbol">.</span><span class="sh_function">warn</span><span class="sh_symbol">(</span>`警告$<span
+          class="sh_cbracket">{</span>name<span class="sh_cbracket">}</span>`<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '警告描述'到 stderr。</span>
+</code></pre>
+      <p>例子，使用 <code>Console</code> 类：</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> out <span
+        class="sh_symbol">=</span> <span class="sh_function">getStreamSomehow</span><span class="sh_symbol">();</span>
+<span class="sh_keyword">const</span> err <span class="sh_symbol">=</span> <span
+          class="sh_function">getStreamSomehow</span><span class="sh_symbol">();</span>
+<span class="sh_keyword">const</span> myConsole <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> console<span
+          class="sh_symbol">.</span><span class="sh_function">Console</span><span class="sh_symbol">(</span>out<span
+          class="sh_symbol">,</span> err<span class="sh_symbol">);</span>
+
+myConsole<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'你好世界'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '你好世界'到 out。</span>
+myConsole<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'你好%s'</span><span class="sh_symbol">,</span> <span class="sh_string">'世界'</span><span
+          class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '你好世界'到 out。</span>
+myConsole<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span><span
+          class="sh_keyword">new</span> <span class="sh_predef_func">Error</span><span class="sh_symbol">(</span><span
+          class="sh_string">'错误信息'</span><span class="sh_symbol">));</span>
+<span class="sh_comment">// 打印: [Error: 错误信息]到 err。</span>
+
+<span class="sh_keyword">const</span> name <span class="sh_symbol">=</span> <span class="sh_string">'描述'</span><span
+          class="sh_symbol">;</span>
+myConsole<span class="sh_symbol">.</span><span class="sh_function">warn</span><span class="sh_symbol">(</span>`警告$<span
+          class="sh_cbracket">{</span>name<span class="sh_cbracket">}</span>`<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: '警告描述'到 err。</span>
+</code></pre>
+      <h2>Console 类<span><a class="mark" href="#console_class_console" id="console_class_console">#</a></span></h2>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_class_console">查看英文版</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-en/edit/master/console/class_console.md">查看英文md文件</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-cn/edit/master/console/class_console.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <details class="changelog">
+          <summary>版本历史</summary>
+          <table>
+            <tbody>
+            <tr>
+              <th>版本</th>
+              <th>变更</th>
+            </tr>
+            <tr>
+              <td>v8.0.0</td>
+              <td><p>Errors that occur while writing to the underlying streams will now be ignored.</p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </details>
+      </div><!--type=class-->
+      <p><code>Console</code> 类可用于创建一个具有可配置的输出流的简单记录器，可以通过 <code>require('console').Console</code> 或 <code>console.Console</code>
+        使用：</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> <span
+        class="sh_cbracket">{</span> Console <span class="sh_cbracket">}</span> <span class="sh_symbol">=</span> <span
+        class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'console'</span><span
+        class="sh_symbol">);</span>
+</code></pre>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> <span
+        class="sh_cbracket">{</span> Console <span class="sh_cbracket">}</span> <span class="sh_symbol">=</span> console<span
+        class="sh_symbol">;</span>
+</code></pre>
+      <h3>new Console(stdout[, stderr])<span><a class="mark" href="#console_new_console_stdout_stderr"
+                                                id="console_new_console_stdout_stderr">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a
+        href="/api/en/console.html#console_new_console_stdout_stderr">查看英文版</a> / <a rel="nofollow" target="_blank"
+                                                                                     href="https://github.com/nodejscn/node-api-en/edit/master/console/new_console_stdout_stderr.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/new_console_stdout_stderr.md">编辑中文md文件</a>
+      </p>
+      <div class="signature">
+        <ul>
+          <li><code>stdout</code> <span class="type">&lt;Writable&gt;</span></li>
+          <li><code>stderr</code> <span class="type">&lt;Writable&gt;</span></li>
+        </ul>
+      </div>
+      <p>通过传入一个或两个可写流实例，创建一个新的 <code>Console</code> 对象。
+        <code>stdout</code> 是一个可写流，用于打印日志或输出信息。
+        <code>stderr</code> 用于输出警告或错误。
+        如果没有传入 <code>stderr</code> ，则警告或错误输出会被发送到 <code>stdout</code> 。</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> output <span
+        class="sh_symbol">=</span> fs<span class="sh_symbol">.</span><span
+        class="sh_function">createWriteStream</span><span class="sh_symbol">(</span><span class="sh_string">'./stdout.log'</span><span
+        class="sh_symbol">);</span>
+<span class="sh_keyword">const</span> errorOutput <span class="sh_symbol">=</span> fs<span
+          class="sh_symbol">.</span><span class="sh_function">createWriteStream</span><span
+          class="sh_symbol">(</span><span class="sh_string">'./stderr.log'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 自定义的简单记录器</span>
+<span class="sh_keyword">const</span> logger <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> <span
+          class="sh_function">Console</span><span class="sh_symbol">(</span>output<span class="sh_symbol">,</span> errorOutput<span
+          class="sh_symbol">);</span>
+<span class="sh_comment">// 像 console 一样使用</span>
+<span class="sh_keyword">const</span> count <span class="sh_symbol">=</span> <span class="sh_number">5</span><span
+          class="sh_symbol">;</span>
+logger<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'count: %d'</span><span class="sh_symbol">,</span> count<span class="sh_symbol">);</span>
+<span class="sh_comment">// stdout.log 中打印: count 5</span>
+</code></pre>
+      <p>全局的 <code>console</code> 是一个特殊的 <code>Console</code> 实例，它的输出会发送到 <a href="process.html#process_process_stdout"><code>process.stdout</code></a>
+        和 <a href="process.html#process_process_stderr"><code>process.stderr</code></a>。
+        相当于调用：</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">new</span> <span class="sh_function">Console</span><span
+        class="sh_symbol">(</span>process<span class="sh_symbol">.</span>stdout<span
+        class="sh_symbol">,</span> process<span class="sh_symbol">.</span>stderr<span class="sh_symbol">);</span>
+</code></pre>
+      <h3>console.assert(value[, message][, ...args])<span><a class="mark"
+                                                              href="#console_console_assert_value_message_args"
+                                                              id="console_console_assert_value_message_args">#</a></span>
+      </h3>
+      <p style="font-size:12px;margin-top:-1em"><a
+        href="/api/en/console.html#console_console_assert_value_message_args">查看英文版</a> / <a rel="nofollow"
+                                                                                             target="_blank"
+                                                                                             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_assert_value_message_args.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_assert_value_message_args.md">编辑中文md文件</a>
+      </p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.101</span>
+      </div>
+      <ul>
+        <li><code>value</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>message</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p>一个简单的断言测试，验证 <code>value</code> 是否为真。
+        如果不为真，则抛出 <code>AssertionError</code>。
+        如果提供了 <code>message</code>，则使用 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>
+        格式化并作为错误信息使用。</p>
+      <pre class="sh_sourceCode"><code class="lang-js">console<span class="sh_symbol">.</span><span class="sh_function">assert</span><span
+        class="sh_symbol">(</span><span class="sh_keyword">true</span><span class="sh_symbol">,</span> <span
+        class="sh_string">'does nothing'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 通过</span>
+console<span class="sh_symbol">.</span><span class="sh_function">assert</span><span class="sh_symbol">(</span><span
+          class="sh_keyword">false</span><span class="sh_symbol">,</span> <span
+          class="sh_string">'Whoops %s'</span><span class="sh_symbol">,</span> <span class="sh_string">'didn</span><span
+          class="sh_specialchar">\'</span><span class="sh_string">t work'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// AssertionError: Whoops didn't work</span>
+</code></pre>
+      <p>注意：Node.js 中的 <code>console.assert()</code> 方法与<a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/console/assert">在浏览器中</a>的 <code>console.assert()</code>
+        方法的实现是不一样的。</p>
+      <p>具体地说，在浏览器中，用非真的断言调用 <code>console.assert()</code> 会导致 <code>message</code> 被打印到控制台但不会中断后续代码的执行。
+        而在 Node.js 中，非真的断言会导致抛出 <code>AssertionError</code>。</p>
+      <p>可以通过扩展 Node.js 的 <code>console</code> 并重写 <code>console.assert()</code> 方法来实现与浏览器中类似的功能。</p>
+      <p>例子，创建一个简单的模块，并扩展与重写了 Node.js 中 <code>console</code> 的默认行为。</p>
+      <!-- eslint-disable func-name-matching -->
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_string">'use strict'</span><span
+        class="sh_symbol">;</span>
+
+<span class="sh_comment">// 用一个新的不带补丁的 assert 实现来创建一个简单的 console 扩展。</span>
+<span class="sh_keyword">const</span> myConsole <span class="sh_symbol">=</span> <span
+          class="sh_predef_func">Object</span><span class="sh_symbol">.</span><span
+          class="sh_function">create</span><span class="sh_symbol">(</span>console<span class="sh_symbol">,</span> <span
+          class="sh_cbracket">{</span>
+  assert<span class="sh_symbol">:</span> <span class="sh_cbracket">{</span>
+    value<span class="sh_symbol">:</span> <span class="sh_keyword">function</span> <span
+          class="sh_function">assert</span><span class="sh_symbol">(</span>assertion<span class="sh_symbol">,</span> message<span
+          class="sh_symbol">,</span> <span class="sh_symbol">...</span>args<span class="sh_symbol">)</span> <span
+          class="sh_cbracket">{</span>
+      <span class="sh_keyword">try</span> <span class="sh_cbracket">{</span>
+        console<span class="sh_symbol">.</span><span class="sh_function">assert</span><span class="sh_symbol">(</span>assertion<span
+          class="sh_symbol">,</span> message<span class="sh_symbol">,</span> <span class="sh_symbol">...</span>args<span
+          class="sh_symbol">);</span>
+      <span class="sh_cbracket">}</span> <span class="sh_keyword">catch</span> <span class="sh_symbol">(</span>err<span
+          class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+        console<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span>err<span
+          class="sh_symbol">.</span>stack<span class="sh_symbol">);</span>
+      <span class="sh_cbracket">}</span>
+    <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+    configurable<span class="sh_symbol">:</span> <span class="sh_keyword">true</span><span class="sh_symbol">,</span>
+    enumerable<span class="sh_symbol">:</span> <span class="sh_keyword">true</span><span class="sh_symbol">,</span>
+    writable<span class="sh_symbol">:</span> <span class="sh_keyword">true</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">);</span>
+
+module<span class="sh_symbol">.</span>exports <span class="sh_symbol">=</span> myConsole<span class="sh_symbol">;</span>
+</code></pre>
+      <p>然后可以用来直接替换内置的 console：</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> console <span
+        class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span
+        class="sh_string">'./myConsole'</span><span class="sh_symbol">);</span>
+console<span class="sh_symbol">.</span><span class="sh_function">assert</span><span class="sh_symbol">(</span><span
+          class="sh_keyword">false</span><span class="sh_symbol">,</span> <span
+          class="sh_string">'会打印这个消息，但不会抛出错误'</span><span class="sh_symbol">);</span>
+console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'这个也会打印'</span><span class="sh_symbol">);</span>
+</code></pre>
+      <h3>console.clear()<span><a class="mark" href="#console_console_clear" id="console_console_clear">#</a></span>
+      </h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_clear">查看英文版</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-en/edit/master/console/console_clear.md">查看英文md文件</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_clear.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v8.3.0</span>
+      </div>
+      <p>当 <code>stdout</code> 是一个 TTY 时，调用 <code>console.clear()</code> 将尝试清除 TTY。 当 <code>stdout</code>
+        不是一个TTY时，该方法什么都不做。</p>
+      <p><em>注意</em>：<code>console.clear()</code> 的具体行为可能因操作系统和终端类型而异。 对于大多数Linux操作系统，<code>console.clear()</code> 与
+        <code>clear</code> shell 命令行为类似。 在Windows上，<code>console.clear()</code> 将只清除当前终端视图中Node.js二进制文件的输出。</p>
+      <h3>console.count([label])<span><a class="mark" href="#console_console_count_label"
+                                         id="console_console_count_label">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_count_label">查看英文版</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-en/edit/master/console/console_count_label.md">查看英文md文件</a> / <a
+          rel="nofollow" target="_blank"
+          href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_count_label.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v8.3.0</span>
+      </div>
+      <ul>
+        <li><code>label</code>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a>
+          计数器的显示标签。 默认为 <code>'default'</code>。
+        </li>
+      </ul>
+      <p>维护一个指定 <code>label</code> 的内部计数器并且输出到 <code>stdout</code> 指定 <code>label</code> 调用 <code>console.count()</code>
+        的次数。</p>
+      <!-- eslint-skip -->
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_symbol">&gt;</span> console<span
+        class="sh_symbol">.</span><span class="sh_function">count</span><span class="sh_symbol">()</span>
+<span class="sh_keyword">default</span><span class="sh_symbol">:</span> <span class="sh_number">1</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">(</span><span class="sh_string">'default'</span><span class="sh_symbol">)</span>
+<span class="sh_keyword">default</span><span class="sh_symbol">:</span> <span class="sh_number">2</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">(</span><span class="sh_string">'abc'</span><span class="sh_symbol">)</span>
+abc<span class="sh_symbol">:</span> <span class="sh_number">1</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">(</span><span class="sh_string">'xyz'</span><span class="sh_symbol">)</span>
+xyz<span class="sh_symbol">:</span> <span class="sh_number">1</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">(</span><span class="sh_string">'abc'</span><span class="sh_symbol">)</span>
+abc<span class="sh_symbol">:</span> <span class="sh_number">2</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">()</span>
+<span class="sh_keyword">default</span><span class="sh_symbol">:</span> <span class="sh_number">3</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span>
+</code></pre>
+      <h3>console.countReset([label='default'])<span><a class="mark" href="#console_console_countreset_label_default"
+                                                        id="console_console_countreset_label_default">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_countreset_label_default">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_countreset_label_default.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_countreset_label_default.md">编辑中文md文件</a>
+      </p>
+      <div class="api_metadata">
+        <span>新增于: v8.3.0</span>
+      </div>
+      <ul>
+        <li><code>label</code>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a>
+          计数器的显示标签。 默认为 <code>'default'</code>。
+        </li>
+      </ul>
+      <p>重置指定 <code>label</code> 的内部计数器。</p>
+      <!-- eslint-skip -->
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_symbol">&gt;</span> console<span
+        class="sh_symbol">.</span><span class="sh_function">count</span><span class="sh_symbol">(</span><span
+        class="sh_string">'abc'</span><span class="sh_symbol">);</span>
+abc<span class="sh_symbol">:</span> <span class="sh_number">1</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span
+          class="sh_function">countReset</span><span class="sh_symbol">(</span><span class="sh_string">'abc'</span><span
+          class="sh_symbol">);</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span> console<span class="sh_symbol">.</span><span class="sh_function">count</span><span
+          class="sh_symbol">(</span><span class="sh_string">'abc'</span><span class="sh_symbol">);</span>
+abc<span class="sh_symbol">:</span> <span class="sh_number">1</span>
+<span class="sh_predef_var">undefined</span>
+<span class="sh_symbol">&gt;</span>
+</code></pre>
+      <h3>console.dir(obj[, options])<span><a class="mark" href="#console_console_dir_obj_options"
+                                              id="console_console_dir_obj_options">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_dir_obj_options">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_dir_obj_options.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_dir_obj_options.md">编辑中文md文件</a>
+      </p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.101</span>
+      </div>
+      <ul>
+        <li><code>obj</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>options</code>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"
+             class="type">&lt;Object&gt;</a>
+          <ul>
+            <li><code>showHidden</code>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type"
+                 class="type">&lt;boolean&gt;</a></li>
+            <li><code>depth</code>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type"
+                 class="type">&lt;number&gt;</a></li>
+            <li><code>colors</code>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type"
+                 class="type">&lt;boolean&gt;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p>在 <code>obj</code> 上使用 <a href="util.html#util_util_inspect_object_options"><code>util.inspect()</code></a>
+        并打印结果字符串到 <code>stdout</code>。
+        该函数会绕过任何定义在 <code>obj</code> 上的自定义的 <code>inspect()</code> 函数。
+        可选的 <code>options</code> 对象可以传入用于改变被格式化的字符串：</p>
+      <ul>
+        <li><p><code>showHidden</code> - 如果为 <code>true</code>，则该对象中的不可枚举属性和 symbol 属性也会显示。默认为 <code>false</code>。</p>
+        </li>
+        <li><p><code>depth</code> - 告诉 <a href="util.html#util_util_inspect_object_options"><code>util.inspect()</code></a>
+          函数当格式化对象时要递归多少次。
+          这对于检查较大的复杂对象很有用。
+          默认为 <code>2</code>。
+          设为 <code>null</code> 可无限递归。</p>
+        </li>
+        <li><p><code>colors</code> - 如果为 <code>true</code>，则输出会带有 ANSI 颜色代码。
+          默认为 <code>false</code>。
+          颜色是可定制的，详见<a href="util.html#util_customizing_util_inspect_colors">定制 <code>util.inspect()</code> 颜色</a>。</p>
+        </li>
+      </ul>
+      <h3>console.error([data][, ...args])<span><a class="mark" href="#console_console_error_data_args"
+                                                   id="console_console_error_data_args">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_error_data_args">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_error_data_args.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_error_data_args.md">编辑中文md文件</a>
+      </p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.100</span>
+      </div>
+      <ul>
+        <li><code>data</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p>打印到 <code>stderr</code>，并带上换行符。
+        可以传入多个参数，第一个参数作为主要信息，其他参数作为类似于 <a href="http://man7.org/linux/man-pages/man3/printf.3.html">printf(3)</a>
+        中的代替值（参数都会传给 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>）。</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> code <span
+        class="sh_symbol">=</span> <span class="sh_number">5</span><span class="sh_symbol">;</span>
+console<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span><span
+          class="sh_string">'error #%d'</span><span class="sh_symbol">,</span> code<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: error #5 到 stderr</span>
+console<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span><span
+          class="sh_string">'error'</span><span class="sh_symbol">,</span> code<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: error 5 到 stderr</span>
+</code></pre>
+      <p>如果在第一个字符串中没有找到格式化元素（如 <code>%d</code>），则在每个参数上调用 <a href="util.html#util_util_inspect_object_options"><code>util.inspect()</code></a>
+        并将结果字符串值拼在一起。
+        详见 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>。</p>
+      <h3>console.group([...label])<span><a class="mark" href="#console_console_group_label"
+                                            id="console_console_group_label">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_group_label">查看英文版</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-en/edit/master/console/console_group_label.md">查看英文md文件</a> / <a
+          rel="nofollow" target="_blank"
+          href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_group_label.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v8.5.0</span>
+      </div>
+      <ul>
+        <li><code>...label</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p>将后续行的缩进增加两个空格。</p>
+      <p>如果提供了一个或多个 <code>label</code>s，则首先打印这些 <code>label</code>s，而不需要额外的缩进。</p>
+      <h3>console.groupCollapsed()<span><a class="mark" href="#console_console_groupcollapsed"
+                                           id="console_console_groupcollapsed">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_groupcollapsed">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_groupcollapsed.md">查看英文md文件</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_groupcollapsed.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v8.5.0</span>
+      </div>
+      <p><a href="#console_console_group_label"><code>console.group()</code></a>的一个别名.</p>
+      <h3>console.groupEnd()<span><a class="mark" href="#console_console_groupend"
+                                     id="console_console_groupend">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_groupend">查看英文版</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-en/edit/master/console/console_groupend.md">查看英文md文件</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_groupend.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v8.5.0</span>
+      </div>
+      <p>将后续行的缩进减少两个空格。</p>
+      <h3>console.info([data][, ...args])<span><a class="mark" href="#console_console_info_data_args"
+                                                  id="console_console_info_data_args">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_info_data_args">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_info_data_args.md">查看英文md文件</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_info_data_args.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.100</span>
+      </div>
+      <ul>
+        <li><code>data</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p><code>console.info()</code> 函数是 <a href="#console_console_log_data_args"><code>console.log()</code></a> 的一个别名。
+      </p>
+      <h3>console.log([data][, ...args])<span><a class="mark" href="#console_console_log_data_args"
+                                                 id="console_console_log_data_args">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_log_data_args">查看英文版</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-en/edit/master/console/console_log_data_args.md">查看英文md文件</a> / <a
+          rel="nofollow" target="_blank"
+          href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_log_data_args.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.100</span>
+      </div>
+      <ul>
+        <li><code>data</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p>打印到 <code>stdout</code>，并带上换行符。
+        可以传入多个参数，第一个参数作为主要信息，其他参数作为类似于 <a href="http://man7.org/linux/man-pages/man3/printf.3.html">printf(3)</a>
+        中的代替值（参数都会传给 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>）。</p>
+      <pre class="sh_sourceCode"><code class="lang-js"><span class="sh_keyword">const</span> count <span
+        class="sh_symbol">=</span> <span class="sh_number">5</span><span class="sh_symbol">;</span>
+console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'count: %d'</span><span class="sh_symbol">,</span> count<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: count: 5 到 stdout</span>
+console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span
+          class="sh_string">'count:'</span><span class="sh_symbol">,</span> count<span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: count: 5 到 stdout</span>
+</code></pre>
+      <p>详见 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>。</p>
+      <h3>console.time(label)<span><a class="mark" href="#console_console_time_label"
+                                      id="console_console_time_label">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_time_label">查看英文版</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-en/edit/master/console/console_time_label.md">查看英文md文件</a> / <a
+        rel="nofollow" target="_blank"
+        href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_time_label.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.104</span>
+      </div>
+      <ul>
+        <li><code>label</code>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a>
+        </li>
+      </ul>
+      <p>启动一个定时器，用以计算一个操作的持续时间。
+        定时器由一个唯一的 <code>label</code> 标识。
+        当调用 <a href="#console_console_timeend_label"><code>console.timeEnd()</code></a> 时，可以使用相同的 <code>label</code>
+        来停止定时器，并以毫秒为单位将持续时间输出到 <code>stdout</code>。
+        定时器持续时间精确到亚毫秒。</p>
+      <h3>console.timeEnd(label)<span><a class="mark" href="#console_console_timeend_label"
+                                         id="console_console_timeend_label">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_timeend_label">查看英文版</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-en/edit/master/console/console_timeend_label.md">查看英文md文件</a> / <a
+          rel="nofollow" target="_blank"
+          href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_timeend_label.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <details class="changelog">
+          <summary>版本历史</summary>
+          <table>
+            <tbody>
+            <tr>
+              <th>版本</th>
+              <th>变更</th>
+            </tr>
+            <tr>
+              <td>v6.0.0</td>
+              <td><p>This method no longer supports multiple calls that don’t map to individual
+                <code>console.time()</code> calls; see below for details.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>v0.1.104</td>
+              <td><p><span>新增于: v0.1.104</span></p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </details>
+      </div>
+      <ul>
+        <li><code>label</code>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a>
+        </li>
+      </ul>
+      <p>停止之前通过调用 <a href="#console_console_time_label"><code>console.time()</code></a> 启动的定时器，并打印结果到
+        <code>stdout</code>：</p>
+      <pre class="sh_sourceCode"><code class="lang-js">console<span class="sh_symbol">.</span><span class="sh_function">time</span><span
+        class="sh_symbol">(</span><span class="sh_string">'100-elements'</span><span class="sh_symbol">);</span>
+<span class="sh_keyword">for</span> <span class="sh_symbol">(</span>let i <span class="sh_symbol">=</span> <span
+          class="sh_number">0</span><span class="sh_symbol">;</span> i <span class="sh_symbol">&lt;</span> <span
+          class="sh_number">100</span><span class="sh_symbol">;</span> i<span class="sh_symbol">++)</span> <span
+          class="sh_cbracket">{}</span>
+console<span class="sh_symbol">.</span><span class="sh_function">timeEnd</span><span class="sh_symbol">(</span><span
+          class="sh_string">'100-elements'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印 100-elements: 225.438ms</span>
+</code></pre>
+      <p>注意：从 Node.js v6.0.0 开始，<code>console.timeEnd()</code> 删除了计时器以避免泄漏。
+        在旧版本上，计时器依然保留。
+        它允许 <code>console.timeEnd()</code> 可以多次调用同一标签。
+        此功能是非计划中的，不再被支持。</p>
+      <h3>console.trace([message][, ...args])<span><a class="mark" href="#console_console_trace_message_args"
+                                                      id="console_console_trace_message_args">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a
+        href="/api/en/console.html#console_console_trace_message_args">查看英文版</a> / <a rel="nofollow" target="_blank"
+                                                                                      href="https://github.com/nodejscn/node-api-en/edit/master/console/console_trace_message_args.md">查看英文md文件</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_trace_message_args.md">编辑中文md文件</a>
+      </p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.104</span>
+      </div>
+      <ul>
+        <li><code>message</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p>打印字符串 <code>'Trace :'</code> 到 <code>stderr</code> ，并通过 <a href="util.html#util_util_format_format_args"><code>util.format()</code></a>
+        格式化消息与堆栈跟踪在代码中的当前位置。</p>
+      <pre class="sh_sourceCode"><code class="lang-js">console<span class="sh_symbol">.</span><span class="sh_function">trace</span><span
+        class="sh_symbol">(</span><span class="sh_string">'Show me'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// 打印: (堆栈跟踪会根据被调用的跟踪的位置而变化)</span>
+<span class="sh_comment">//  Trace: Show me</span>
+<span class="sh_comment">//    at repl:2:9</span>
+<span class="sh_comment">//    at REPLServer.defaultEval (repl.js:248:27)</span>
+<span class="sh_comment">//    at bound (domain.js:287:14)</span>
+<span class="sh_comment">//    at REPLServer.runBound [as eval] (domain.js:300:12)</span>
+<span class="sh_comment">//    at REPLServer.&lt;anonymous&gt; (repl.js:412:12)</span>
+<span class="sh_comment">//    at emitOne (events.js:82:20)</span>
+<span class="sh_comment">//    at REPLServer.emit (events.js:169:7)</span>
+<span class="sh_comment">//    at REPLServer.Interface._onLine (readline.js:210:10)</span>
+<span class="sh_comment">//    at REPLServer.Interface._line (readline.js:549:8)</span>
+<span class="sh_comment">//    at REPLServer.Interface._ttyWrite (readline.js:826:14)</span>
+</code></pre>
+      <h3>console.warn([data][, ...args])<span><a class="mark" href="#console_console_warn_data_args"
+                                                  id="console_console_warn_data_args">#</a></span></h3>
+      <p style="font-size:12px;margin-top:-1em"><a href="/api/en/console.html#console_console_warn_data_args">查看英文版</a>
+        / <a rel="nofollow" target="_blank"
+             href="https://github.com/nodejscn/node-api-en/edit/master/console/console_warn_data_args.md">查看英文md文件</a> /
+        <a rel="nofollow" target="_blank"
+           href="https://github.com/nodejscn/node-api-cn/edit/master/console/console_warn_data_args.md">编辑中文md文件</a></p>
+      <div class="api_metadata">
+        <span>新增于: v0.1.100</span>
+      </div>
+      <ul>
+        <li><code>data</code> <span class="type">&lt;any&gt;</span></li>
+        <li><code>...args</code> <span class="type">&lt;any&gt;</span></li>
+      </ul>
+      <p><code>console.warn()</code> 函数是 <a href="#console_console_error_data_args"><code>console.error()</code></a>
+        的一个别名。</p>
+
+    </div>
+  </div>
+</div>
+<!-- 搜索弹窗 -->
+<div id="modal_search_bg"></div>
+<div id="modal_search">
+  <input placeholder="API 快速搜索" id="modal_search_input">
+  <div id="modal_search_result"></div>
+</div>
+<!-- js -->
+<!--[if lt IE 10]>
+<script src="/static/lib/placeholders.js?20170426"></script><![endif]-->
+<script src="//hm.baidu.com/hm.js?499f4c3231c1e5a1e72d19d00e822f09"></script>
+<script src="/static/api.js?20170607"></script>
+
