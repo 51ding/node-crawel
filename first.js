@@ -1,7 +1,7 @@
 var puppeteer = require("puppeteer");
 var {initDatabase, initSchema} = require("./init");
 var mongoose = require("mongoose");
-var {sleep,saveApi,formData,getPage,saveApiContent} = require("./util");
+var {sleep,saveApi,formData,getPage,saveApiCatalog} = require("./util");
 var cheerio = require("cheerio");
 
 (async () => {
@@ -31,7 +31,7 @@ var cheerio = require("cheerio");
   // }, bodyHandle);
   var result=await getPage(browser,"http://nodejs.cn/api/");
   await saveApi(result);
-  await saveApiContent(browser);
+  await saveApiCatalog(browser);
 
  // await formData();
 

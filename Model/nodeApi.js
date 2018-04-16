@@ -2,7 +2,10 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
+var ObjectId=Schema.Types.ObjectId;
+
 var apiSchema = new Schema({
+    Id:ObjectId,
     name: String,
     url: String,
     href: String,
@@ -10,7 +13,8 @@ var apiSchema = new Schema({
       order:Number,
       name:String,
       anchor:String,
-      content:String
+      content:String,
+      children:Array
     }]
   }
 )

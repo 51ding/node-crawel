@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var connectionString = "mongodb://127.0.0.1:27017/nodeapi";
+var config=require("./config");
 var {resolve}=require("path");
 var glob=require("glob");
 
@@ -10,7 +10,7 @@ exports.initDatabase =function(){
 
     mongoose.set("debug", true);
 
-    mongoose.connect(connectionString);
+    mongoose.connect(config.connectionString);
 
     var db = mongoose.connection;
 
