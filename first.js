@@ -9,7 +9,7 @@ var cheerio = require("cheerio");
   await initSchema();
   console.log("初始化完成！");
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     timeout: 0,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     dumpio: false,

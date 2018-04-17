@@ -12,7 +12,8 @@ var CatalogSchema=new Schema({
   parentid:ObjectId,
   versions:[{key:String,value:String}],
   docapiid:{type:ObjectId,ref:"apidoc"},
-  parameters:[String]
+  parameters:[String],
+  content:String
 })
 
 module.exports=mongoose.model("catalog",CatalogSchema);

@@ -29,7 +29,8 @@ exports.saveApi = async function (result) {
 
     ApiDocSchema.findOne({name: name}, (err, doc) => {
       if (!doc) {
-        var api = new ApiDocSchema({name, url, href});
+        var id = mongoose.Types.ObjectId();
+        var api = new ApiDocSchema({name, url, href, id});
         api.save((err, product) => {
           if (err) Promise.reject(err);
         })
@@ -65,23 +66,21 @@ async function saveApiCatalog(browser) {
     if (err) return Promise.reject(err);
 
     for (let i = 0; i < doc.length; i++) {
-      if (i == 2) {
-        var url = `${doc[i].href}${doc[i].url}`;
-        saveApiDetail(browser, url, doc[i].name);
-      }
+      var url = `${doc[i].href}${doc[i].url}`;
+      var apidocid = doc[i]._id;
+        saveApiDetail(browser, url, doc[i].name, apidocid);
     }
   })
 }
 
 
-async function saveApiDetail(browser, url, name) {
+async function saveApiDetail(browser, url, name, apidocid) {
   var result = await getPage(browser, url);
-  var apiSchema = mongoose.model("Api");
   var $ = result.$;
   var children = $("#toc > ul").first();
   var CatalogSchema = mongoose.model("catalog");
   var root = new CatalogSchema();
-  getChild(children, 1, $, root);
+  getChild(children, 1, $, root, null, apidocid);
   var CatalogSchema = mongoose.model("catalog");
   root.save(() => {
     console.log("保存成功！");
@@ -90,7 +89,7 @@ async function saveApiDetail(browser, url, name) {
 
 
 //使用递归实现
-function getChild(child, currentLevel, $, root, parent) {
+function getChild(child, currentLevel, $, root, parent, apidocid) {
   var level = currentLevel;
 
   if (child.is("ul")) {
@@ -108,8 +107,10 @@ function getChild(child, currentLevel, $, root, parent) {
         root.level = level;
         root.leaf = true;
         root.anchorClass = anchorClass;
+        root.docapiid = apidocid;
         getVersionInformation(root, anchorClass, $);
         getParameterInformation(root, anchor, $);
+        getApiDetailInformation(root, anchor, $)
       }
       else {
         var data = {
@@ -123,6 +124,7 @@ function getChild(child, currentLevel, $, root, parent) {
         }
         getVersionInformation(data, anchorClass, $);
         getParameterInformation(data, anchor, $);
+        getApiDetailInformation(data, anchor, $)
         if (level - 1 == 2) {
           root.children.push(data);
         }
@@ -139,7 +141,7 @@ function getChild(child, currentLevel, $, root, parent) {
       // var href = span.children("a").first().attr("href");
       // // var x=$(`a[href=${href}]`);
       // // console.log(x.length);
-      // var anchor = $(`#${href.replace("#", "")}`).parent().parent();
+      //var anchor = $(`#${href.replace("#", "")}`).parent().parent();
       // //获取版本信息版本信息
       // var metaData = anchor.next().next();
       // //如果存在就读取版本信息
@@ -164,7 +166,7 @@ function getChild(child, currentLevel, $, root, parent) {
       // }
       //
       // //获取参数列表
-      // var parameterlist = anchor.next().next().next();
+      //var parameterlist = anchor.next().next().next();
       // if (parameterlist.is("ul")) {
       //   parameterlist.children("li").each((index, item) => {
       //     //console.log($(item).text().trim().replace("\n",""));
@@ -209,20 +211,21 @@ function getParameterInformation(data, element, $) {
   var parameterlist = element.next().next().next();
   if (parameterlist.is("ul")) {
     parameterlist.children("li").each((index, item) => {
-      console.log(index);
-        data.parameters.push($(item).text().trim().replace("\n", ""));
+      data.parameters.push($(item).text().trim().replace("\n", ""));
     });
   }
 }
 
 
 //获取Api详情数据
-function  getApiDetailInformation(data,element,$) {
-  var content = parameterlist.nextUntil("h1,h2,h3,h4,h5");
+function getApiDetailInformation(data, element, $) {
+  var content = element.next().next().next().nextUntil("h1,h2,h3,h4,h5");
+  var str = "";
   content.each((index, item) => {
-
-    console.log($(item).text());
+    str += $(item).text() + "\n";
   })
+
+  data.content = str;
 }
 
 
