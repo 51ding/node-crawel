@@ -28,4 +28,6 @@ exports.initSchema=async function(){
   glob.sync(resolve(__dirname,"./Model","**/*.js")).forEach(require);
 }
 
+//做了一些修改
+
 
